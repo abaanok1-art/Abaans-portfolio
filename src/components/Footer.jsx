@@ -4,12 +4,9 @@ import {
   Mail, 
   Phone, 
   MessageCircle, 
-  ExternalLink, 
-  Heart, 
   ArrowUpRight, 
   MapPin, 
-  Code,
-  CheckCircle2
+  Code
 } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
 
@@ -17,26 +14,26 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-900 text-slate-400 relative overflow-hidden">
+    <footer className="bg-slate-950 border-t border-slate-900 text-slate-400 relative overflow-hidden w-full">
       {/* Glow orb */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-24 bg-indigo-600/10 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 sm:w-96 h-24 bg-indigo-600/10 blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div className="max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2400px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-10 sm:pb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
           {/* Brand info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <img
                 src={personalInfo.avatarUrl}
                 alt={personalInfo.name}
-                className="w-12 h-12 rounded-full object-cover border-2 border-indigo-500 shadow-md"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-indigo-500 shadow-md"
               />
               <div>
-                <h3 className="text-white font-bold text-lg">{personalInfo.name}</h3>
+                <h3 className="text-white font-bold text-base sm:text-lg">{personalInfo.name}</h3>
                 <p className="text-xs text-indigo-400 font-medium">Full Stack MERN Developer</p>
               </div>
             </div>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
               Passionate 32-year-old web developer crafting responsive, high-performance web applications and landing pages that drive business growth.
             </p>
             <div className="flex items-center gap-2 text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-500/20 px-3 py-1.5 rounded-lg w-fit">
@@ -47,37 +44,37 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold text-sm tracking-wider uppercase mb-4">
+            <h4 className="text-white font-semibold text-xs sm:text-sm tracking-wider uppercase mb-3 sm:mb-4">
               Explore
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm">
               <li>
-                <Link to="/" className="hover:text-indigo-400 transition-colors flex items-center gap-1.5">
+                <Link to="/" className="hover:text-indigo-400 transition-colors block py-0.5">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-indigo-400 transition-colors flex items-center gap-1.5">
+                <Link to="/about" className="hover:text-indigo-400 transition-colors block py-0.5">
                   About Abaan
                 </Link>
               </li>
               <li>
-                <Link to="/skills" className="hover:text-indigo-400 transition-colors flex items-center gap-1.5">
+                <Link to="/skills" className="hover:text-indigo-400 transition-colors block py-0.5">
                   Tech Stack & Skills
                 </Link>
               </li>
               <li>
-                <Link to="/projects" className="hover:text-indigo-400 transition-colors flex items-center gap-1.5">
+                <Link to="/projects" className="hover:text-indigo-400 transition-colors block py-0.5">
                   Featured Projects
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-1.5">
+                <Link to="/services" className="hover:text-indigo-400 transition-colors block py-0.5">
                   Services & Pricing
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-indigo-400 transition-colors flex items-center gap-1.5">
+                <Link to="/contact" className="hover:text-indigo-400 transition-colors block py-0.5">
                   Contact & Hire
                 </Link>
               </li>
@@ -86,17 +83,17 @@ export default function Footer() {
 
           {/* Direct Contact info */}
           <div>
-            <h4 className="text-white font-semibold text-sm tracking-wider uppercase mb-4">
+            <h4 className="text-white font-semibold text-xs sm:text-sm tracking-wider uppercase mb-3 sm:mb-4">
               Direct Contact
             </h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-xs sm:text-sm">
               <li>
                 <a
                   href={`mailto:${personalInfo.email}`}
                   className="hover:text-indigo-400 transition-colors flex items-center gap-2.5 group"
                 >
-                  <div className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-indigo-400 group-hover:border-indigo-500/40 transition-colors">
-                    <Mail className="w-4 h-4" />
+                  <div className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-indigo-400 group-hover:border-indigo-500/40 transition-colors shrink-0">
+                    <Mail className="w-3.5 h-3.5" />
                   </div>
                   <span className="break-all">{personalInfo.email}</span>
                 </a>
@@ -106,8 +103,8 @@ export default function Footer() {
                   href={`tel:${personalInfo.phone}`}
                   className="hover:text-indigo-400 transition-colors flex items-center gap-2.5 group"
                 >
-                  <div className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-indigo-400 group-hover:border-indigo-500/40 transition-colors">
-                    <Phone className="w-4 h-4" />
+                  <div className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-indigo-400 group-hover:border-indigo-500/40 transition-colors shrink-0">
+                    <Phone className="w-3.5 h-3.5" />
                   </div>
                   <span>{personalInfo.phone} ({personalInfo.formattedPhone})</span>
                 </a>
@@ -119,22 +116,22 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-emerald-400 transition-colors flex items-center gap-2.5 group"
                 >
-                  <div className="p-2 rounded-lg bg-emerald-950/40 border border-emerald-500/20 text-emerald-400 group-hover:border-emerald-500/50 transition-colors">
-                    <MessageCircle className="w-4 h-4" />
+                  <div className="p-2 rounded-lg bg-emerald-950/40 border border-emerald-500/20 text-emerald-400 group-hover:border-emerald-500/50 transition-colors shrink-0">
+                    <MessageCircle className="w-3.5 h-3.5" />
                   </div>
                   <span>WhatsApp Chat</span>
                 </a>
               </li>
               <li className="flex items-center gap-2.5 text-xs text-slate-500 pt-1">
-                <MapPin className="w-4 h-4 text-slate-500 shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
                 <span>{personalInfo.location}</span>
               </li>
             </ul>
           </div>
 
           {/* Fiverr Gig Highlight */}
-          <div className="space-y-4">
-            <h4 className="text-white font-semibold text-sm tracking-wider uppercase">
+          <div className="space-y-3 sm:space-y-4">
+            <h4 className="text-white font-semibold text-xs sm:text-sm tracking-wider uppercase">
               Fiverr Verified
             </h4>
             <div className="p-4 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-emerald-500/30 shadow-lg">
@@ -142,7 +139,7 @@ export default function Footer() {
                 <span className="text-xs font-bold text-emerald-400 tracking-wider uppercase">
                   Active Gig
                 </span>
-                <span className="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-medium">
+                <span className="text-[11px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-bold">
                   5.0 ★
                 </span>
               </div>
@@ -163,15 +160,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-6 sm:pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 text-center sm:text-left">
           <p>© {currentYear} {personalInfo.name}. All rights reserved.</p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             <span className="inline-flex items-center gap-1.5">
               <Code className="w-3.5 h-3.5 text-indigo-400" />
               Built with React & Tailwind CSS
             </span>
             <span>•</span>
-            <span className="text-slate-400">100% Responsive Design</span>
+            <span className="text-slate-400">100% Responsive on All Screens</span>
           </div>
         </div>
       </div>

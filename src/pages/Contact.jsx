@@ -23,7 +23,7 @@ export default function Contact() {
     email: "",
     phone: "",
     service: "Full Stack MERN Web App",
-    budget: "$100 - $300",
+    budget: "$150 (Full Stack Starter - 5 Pages)",
     message: "",
   });
 
@@ -91,7 +91,7 @@ export default function Contact() {
           email: "",
           phone: "",
           service: "Full Stack MERN Web App",
-          budget: "$100 - $300",
+          budget: "$150 (Full Stack Starter - 5 Pages)",
           message: "",
         });
       } else {
@@ -366,9 +366,9 @@ export default function Contact() {
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-indigo-500 transition-colors"
                   >
-                    <option value="$40 - $100 (Starter / Single Page)">$40 - $100 (Starter / Single Page)</option>
-                    <option value="$100 - $300 (Standard Multi-Page / React)">$100 - $300 (Standard Multi-Page / React)</option>
-                    <option value="$300 - $600+ (Full Stack MERN Application)">$300 - $600+ (Full Stack MERN Application)</option>
+                    <option value="$100 (Starter Website - 3 Pages)">$100 (Starter Website - 3 Pages)</option>
+                    <option value="$150 (Full Stack Starter - 5 Pages)">$150 (Full Stack Starter - 5 Pages)</option>
+                    <option value="$345 (Custom Web App - 9 Pages + Admin)">$345 (Custom Web App - 9 Pages + Admin)</option>
                     <option value="Custom / Undecided">Custom / Undecided</option>
                   </select>
                 </div>
@@ -449,3 +449,4 @@ export default function Contact() {
     </div>
   );
 }
+

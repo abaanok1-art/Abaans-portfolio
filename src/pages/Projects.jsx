@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import { 
   Search, 
   ExternalLink, 
-  Filter, 
-  Layers, 
-  Sparkles,
-  ArrowRight,
-  Code
+  ArrowRight
 } from "lucide-react";
 import { projectsData, personalInfo } from "../data/portfolioData";
 import ProjectModal from "../components/ProjectModal";
@@ -44,31 +40,31 @@ export default function Projects() {
   });
 
   return (
-    <div className="pt-28 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pt-24 sm:pt-28 pb-16 sm:pb-20 w-full overflow-x-hidden">
+      <div className="max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs uppercase tracking-wider text-indigo-400 font-bold">
+        <div className="text-center max-w-3xl 2xl:max-w-4xl mx-auto mb-10 sm:mb-12">
+          <span className="text-xs 2xl:text-sm uppercase tracking-wider text-indigo-400 font-bold">
             Recent Work
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mt-2">
+          <h1 className="text-3xl sm:text-5xl 2xl:text-6xl font-extrabold text-white mt-2">
             Projects & Portfolio
           </h1>
-          <p className="text-slate-400 text-base sm:text-lg mt-4 leading-relaxed">
+          <p className="text-slate-400 text-sm sm:text-lg 2xl:text-xl mt-3 sm:mt-4 leading-relaxed">
             Explore live production applications, full-stack MERN architectures, and responsive web components built with attention to design and code quality.
           </p>
         </div>
 
         {/* Filter and Search Bar Controls */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 mb-8 sm:mb-10 p-3.5 sm:p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
           {/* Category Tabs */}
-          <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 w-full md:w-auto">
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                   activeFilter === filter
                     ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/30"
                     : "bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800"
@@ -80,7 +76,7 @@ export default function Projects() {
           </div>
 
           {/* Search Input */}
-          <div className="relative w-full md:w-72">
+          <div className="relative w-full md:w-72 2xl:w-96">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
@@ -93,7 +89,7 @@ export default function Projects() {
         </div>
 
         {/* Counter */}
-        <div className="text-xs text-slate-400 mb-6 flex items-center justify-between">
+        <div className="text-xs 2xl:text-sm text-slate-400 mb-6 flex items-center justify-between">
           <span>
             Showing <strong className="text-white">{filteredProjects.length}</strong> of {projectsData.length} projects
           </span>
@@ -109,14 +105,14 @@ export default function Projects() {
 
         {/* Projects Grid */}
         {filteredProjects.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
                 className="rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all group flex flex-col shadow-xl hover:-translate-y-1 duration-300"
               >
                 {/* Image */}
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-48 sm:h-52 2xl:h-64 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -124,28 +120,28 @@ export default function Projects() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
                   <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-950/80 backdrop-blur-md text-indigo-300 border border-indigo-500/30">
+                    <span className="px-2.5 sm:px-3 py-1 rounded-full text-xs font-semibold bg-slate-950/80 backdrop-blur-md text-indigo-300 border border-indigo-500/30">
                       {project.category}
                     </span>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
+                <div className="p-5 sm:p-6 2xl:p-8 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                    <h3 className="text-base sm:text-lg 2xl:text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-slate-400 line-clamp-3 mb-4 leading-relaxed">
+                    <p className="text-xs sm:text-sm 2xl:text-base text-slate-400 line-clamp-3 mb-4 leading-relaxed">
                       {project.summary}
                     </p>
 
                     {/* Tech Badges */}
-                    <div className="flex flex-wrap gap-1.5 mb-6">
+                    <div className="flex flex-wrap gap-1.5 mb-5 sm:mb-6">
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2.5 py-0.5 rounded-md text-[11px] font-medium bg-slate-800 text-slate-300 border border-slate-700/60"
+                          className="px-2.5 py-0.5 rounded-md text-[10px] sm:text-[11px] font-medium bg-slate-800 text-slate-300 border border-slate-700/60"
                         >
                           {tech}
                         </span>
@@ -157,7 +153,7 @@ export default function Projects() {
                   <div className="flex items-center justify-between pt-4 border-t border-slate-800/80">
                     <button
                       onClick={() => setSelectedProject(project)}
-                      className="text-xs font-bold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1"
+                      className="text-xs 2xl:text-sm font-bold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1"
                     >
                       <span>Full Specifications</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -189,8 +185,8 @@ export default function Projects() {
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 p-8 rounded-3xl bg-slate-900/40 border border-slate-800 mb-20">
-            <p className="text-slate-300 font-semibold mb-2">No projects matched your criteria.</p>
+          <div className="text-center py-16 p-6 sm:p-8 rounded-3xl bg-slate-900/40 border border-slate-800 mb-16 sm:mb-20">
+            <p className="text-slate-300 font-semibold mb-2 text-sm sm:text-base">No projects matched your criteria.</p>
             <p className="text-slate-500 text-xs mb-4">Try clearing your search query or selecting "All".</p>
             <button
               onClick={() => {
@@ -205,17 +201,17 @@ export default function Projects() {
         )}
 
         {/* Custom Project CTA Banner */}
-        <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 border border-indigo-500/30 text-center space-y-4">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+        <div className="rounded-3xl p-6 sm:p-10 lg:p-12 bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 border border-indigo-500/30 text-center space-y-3 sm:space-y-4">
+          <h2 className="text-xl sm:text-3xl 2xl:text-4xl font-extrabold text-white">
             Have a custom web project in mind?
           </h2>
-          <p className="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
+          <p className="text-slate-300 text-xs sm:text-sm 2xl:text-base max-w-xl mx-auto leading-relaxed">
             I can develop your application with custom MERN stack architecture, dynamic database schemas, and modern responsive design.
           </p>
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
             <Link
               to="/contact"
-              className="px-6 py-3 rounded-xl text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/30"
+              className="w-full xs:w-auto px-6 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/30 text-center"
             >
               Get a Free Quote
             </Link>
@@ -223,7 +219,7 @@ export default function Projects() {
               href={personalInfo.fiverrGigUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl text-sm font-bold text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 hover:bg-emerald-900/40 transition-colors inline-flex items-center gap-2"
+              className="w-full xs:w-auto px-6 py-3 rounded-xl text-xs sm:text-sm font-bold text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 hover:bg-emerald-900/40 transition-colors inline-flex items-center justify-center gap-2"
             >
               <span>Order on Fiverr</span>
               <ExternalLink className="w-4 h-4" />
